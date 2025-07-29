@@ -1,0 +1,24 @@
+name: datalake_project
+version: 1.0.0
+
+profile: default
+
+source-paths: ["models", "seeds", "snapshots"]
+
+target-path: "target"
+
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  +materialized: view
+
+seeds:
+  +header: true
+
+snapshots:
+  +target_database: your_database_name
+  +target_schema: your_schema_name
+
+# Additional configurations can be added as needed.
